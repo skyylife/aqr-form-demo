@@ -6,7 +6,7 @@ const Basic = () => (
     <div>
         <h1>AQR Form Demo</h1>
         <Formik
-        initialValues={{ email: '', password: ''}}
+        initialValues={{ email: 'email', password: 'password'}}
         validate={values => {
             let errors = {};
             if (!values.email) {
