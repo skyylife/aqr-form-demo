@@ -25,5 +25,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "object-diff": "0.0.4",
+    "styled-components": "^4.1.3"
+  }
 }
