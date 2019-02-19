@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
-import { Form, Field } from 'react';
-import  Styles  from './styles';
-import  AutoSave  from './AutoSave';
+import { Form, Field } from 'react-final-form';
+import Styles from './styles';
+import AutoSave from './AutoSave';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -13,154 +13,155 @@ const save = async values => {
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {save, sleep};
+        this.state = { save, sleep };
     }
     render() {
-        const {sleep, save, } = this.state;
+        const { sleep, save, } = this.state;
         return (
-    <Styles>
-        <h1>AQR Final Form </h1>
-    <Form 
-        onSubmit={save}
-        initialValies={{state: 'TX'}}
-        subscription={{}/* Email subscriber will be added here*/}
-    >
-        {() => (
-            <div className="form">
-                <AutoSave debounce={1000} save={save} />>        
-            <div>
-                <label> First Name</label>
-                <Field 
-                    name="firstName"
-                    component="input"
-                    type="text"
-                    placeholder="First Name"
-                />
-            </div>
-            <div>
-            <label> Last Name</label>
-            <Field 
-                name="lastName"
-                component="input"
-                type="text"
-                placeholder="Last Name"
-            />
-        </div>
-        <div>
-            <label>Phone Number</label>
-            <Field
-                name="phoneNumber"
-                component="input"
-                type="text"
-                placeholder="#"  
-            />
-        </div>
-        <div>
-            <label>Email</label>
-            <Field
-                name="email"
-                componet="input"
-                type="email"
-                placeholder="Email"
-            />
-        </div>
-        <h2>Contact Info</h2>
-        <div>
-            <label> First Name</label>
-            <Field 
-                name="firstName"
-                component="input"
-                type="text"
-                placeholder="First Name"
-            />
-        </div>
-        <div>
-        <label> Last Name</label>
-        <Field 
-            name="lastName"
-            component="input"
-            type="text"
-            placeholder="Last Name"
-        />
+            <Styles>
+                <h1>AQR Final Form </h1>
+                <Form
+                    onSubmit={save}
+                    initialValies={{ state: 'TX' }}
+                    subscription={{}/* Email subscriber will be added here*/}
+                >
+                    {() => (
+                        <div className="form">
+                            <AutoSave debounce={1000} save={save} />>
+                            <div>
+                                <label> First Name</label>
+                                <Field
+                                    name="firstName"
+                                    component="input"
+                                    type="text"
+                                    placeholder="First Name"
+                                />
+                            </div>
+                            <div>
+                                <label> Last Name</label>
+                                <Field
+                                    name="lastName"
+                                    component="input"
+                                    type="text"
+                                    placeholder="Last Name"
+                                />
+                            </div>
+                            <div>
+                                <label>Phone Number</label>
+                                <Field
+                                    name="phoneNumber"
+                                    component="input"
+                                    type="text"
+                                    placeholder="#"
+                                />
+                            </div>
+                            <div>
+                                <label>Email</label>
+                                <Field
+                                    name="email"
+                                    componet="input"
+                                    type="email"
+                                    placeholder="Email"
+                                />
+                            </div>
+                            <h2>Contact Info</h2>
+                            <div>
+                                <label> First Name</label>
+                                <Field
+                                    name="firstName"
+                                    component="input"
+                                    type="text"
+                                    placeholder="First Name"
+                                />
+                            </div>
+                            <div>
+                                <label> Last Name</label>
+                                <Field
+                                    name="lastName"
+                                    component="input"
+                                    type="text"
+                                    placeholder="Last Name"
+                                />
+                            </div>
+                            <div>
+                                <label>Phone Number</label>
+                                <Field
+                                    name="phoneNumber"
+                                    component="input"
+                                    type="text"
+                                    placeholder="#"
+                                />
+                            </div>
+                            <div>
+                                <label>Email</label>
+                                <Field
+                                    name="email"
+                                    componet="input"
+                                    type="email"
+                                    placeholder="Email"
+                                />
+                            </div>
+                            <h2>Property Address</h2>
+                            <div>
+                                <label>Address Line:</label>
+                                <Field
+                                    name="addressLine"
+                                    component="input"
+                                    type="address"
+                                    placeholder="Address"
+                                />
+                            </div>
+                            <div>
+                                <label>City:</label>
+                                <Field
+                                    name="city"
+                                    component="address"
+                                    type="city"
+                                    placeholder="Texas"
+                                />
+                            </div>
+                            <div>
+                                <label>State</label>
+                                <Field
+                                    name="state"
+                                    component="address"
+                                    type="state"
+                                    placeholder="TX"
+                                />
+                            </div>
+                            <div>
+                                <label>Zip Code</label>
+                                <Field
+                                    name="zipCode"
+                                    component="address"
+                                    type="zip"
+                                    placeholder="11111"
+                                />
+                            </div>
+                            <h2>Type of Problem</h2>
+                            <div>
+                                <label>Choose an item</label>
+                                <Field
+                                    name="problemType"
+                                    component="select"
+                                >
+                                    <option />
+                                    <option value="Option 1"></option>
+                                    <option value="Option 2"></option>
+                                    <option value="Option 3"></option>
+                                </Field>
+                            </div>
+                            <div>
+                                <label>Description of Problem/Work</label>
+                                <Field name="description" component="textarea" placeholder="Description of Problem" />>
     </div>
-    <div>
-        <label>Phone Number</label>
-        <Field
-            name="phoneNumber"
-            component="input"
-            type="text"
-            placeholder="#"  
-        />
-    </div>
-    <div>
-        <label>Email</label>
-        <Field
-            name="email"
-            componet="input"
-            type="email"
-            placeholder="Email"
-        />
-    </div>
-        <h2>Property Address</h2>
-    <div>
-        <label>Address Line:</label>
-        <Field
-            name="addressLine"
-            component="input"
-            type="address"
-            placeholder="Address"
-        />
-    </div>
-    <div>
-        <label>City:</label>
-        <Field
-            name="city"
-            component="address"
-            type="city"
-            placeholder="Texas"
-        />
-    </div>
-    <div>
-        <label>State</label>
-        <Field
-            name="state"
-            component="address"
-            type="state"
-            placeholder="TX"
-        />
-    </div>
-    <div>
-        <label>Zip Code</label>
-        <Field
-            name="zipCode"
-            component="address"
-            type="zip"
-            placeholder="11111"
-        />
-    </div>
-        <h2>Type of Problem</h2>
-    <div>
-        <label>Choose an item</label>
-        <Field
-        name="problemType"
-        component="select"
-        >
-        <option />
-        <option value ="Option 1"></option>
-        <option value ="Option 2"></option>
-        <option value ="Option 3"></option>
-        </Field>
-    </div>
-    <div>
-        <label>Description of Problem/Work</label>
-        <Field name="description" component="textarea" placeholder="Description of Problem" />>
-    </div>
-    </div>
-    )}
-    </Form>
-    </Styles>
-    );
-}
+                        </div>
+                    )}
+                </Form>
+            </Styles>
+        );
+    }
 }
 
 export default App
+
