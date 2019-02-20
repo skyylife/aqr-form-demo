@@ -1,8 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Correct Order of Opertaions
+Clone repo -> cd into rep -> `npm install` -> `npm run`
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+Installs dependencies in order to start the application 
 
 ### `npm start`
 
