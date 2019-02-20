@@ -1,6 +1,6 @@
 
 
-### Correct Order of Opertaions for getting the demo working:
+## Correct Order of Opertaions for getting the demo working:
 
 `Clone repo` -> `cd into rep` -> `npm install` -> `npm run`
 
