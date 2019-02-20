@@ -69,7 +69,7 @@ export default styled.div`
   form,
   div.form {
     text-align: left;
-    max-width: 500px;
+    max-width: 800px;
     margin: 10px auto;
     border: 1px solid #ccc;
     padding: 20px;
@@ -106,6 +106,14 @@ export default styled.div`
         font-size: 1em;
         line-height: 32px;
       }
+      & > qLabel {
+        color: #333;
+        width: 300px;
+        min-width: 60px;
+        font-size: 1em;
+        line-height: 32px;
+
+      }
       & > input,
       & > select,
       & > textarea {
@@ -117,12 +125,16 @@ export default styled.div`
         border-radius: 3px;
       }
       & > input[type='checkbox'] {
-        margin-top: 7px;
+        flex: 1;
+        padding: 3px 5px;
+        margin-left: 15px;
+
+        
       }
       & > div {
         margin-left: 16px;
         & > label {
-          display: block;
+          display: inline;
           & > input {
             margin-right: 3px;
           }

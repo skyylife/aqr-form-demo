@@ -28,6 +28,8 @@
   ],
   "devDependencies": {
     "object-diff": "0.0.4",
+    "react-signature-canvas": "^1.0.1",
+    "smooth-ui": "^4.3.2",
     "styled-components": "^4.1.3"
   }
 }
