@@ -19,15 +19,18 @@ class App extends Component {
         const { sleep, save, } = this.state;
         return (
             <Styles>
-                <h1>AQR Final Form </h1>
+                <h1>All Quick Repairs </h1>
                 <Form
                     onSubmit={save}
                     initialValies={{ state: 'TX' }}
                     subscription={{}/* Email subscriber will be added here*/}
                 >
                     {() => (
+
+                        
                         <div className="form">
-                            <AutoSave debounce={1000} save={save} />>
+                            <AutoSave debounce={1000} save={save} />
+                            <h2> Requester Info:</h2>
                             <div>
                                 <label> First Name</label>
                                 <Field
@@ -64,7 +67,7 @@ class App extends Component {
                                     placeholder="Email"
                                 />
                             </div>
-                            <h2>Contact Info</h2>
+                            <h2>Contact Info:</h2>
                             <div>
                                 <label> First Name</label>
                                 <Field
@@ -101,7 +104,7 @@ class App extends Component {
                                     placeholder="Email"
                                 />
                             </div>
-                            <h2>Property Address</h2>
+                            <h2>Property Address:</h2>
                             <div>
                                 <label>Address Line:</label>
                                 <Field
@@ -115,7 +118,7 @@ class App extends Component {
                                 <label>City:</label>
                                 <Field
                                     name="city"
-                                    component="address"
+                                    component="input"
                                     type="city"
                                     placeholder="Texas"
                                 />
@@ -124,7 +127,7 @@ class App extends Component {
                                 <label>State</label>
                                 <Field
                                     name="state"
-                                    component="address"
+                                    component="input"
                                     type="state"
                                     placeholder="TX"
                                 />
@@ -133,7 +136,7 @@ class App extends Component {
                                 <label>Zip Code</label>
                                 <Field
                                     name="zipCode"
-                                    component="address"
+                                    component="input"
                                     type="zip"
                                     placeholder="11111"
                                 />
@@ -146,15 +149,19 @@ class App extends Component {
                                     component="select"
                                 >
                                     <option />
-                                    <option value="Option 1"></option>
-                                    <option value="Option 2"></option>
-                                    <option value="Option 3"></option>
+                                    <option value="Option 1">Option 1</option>
+                                    <option value="Option 2">Option 2</option>
+                                    <option value="Option 3">Option 3</option>
                                 </Field>
                             </div>
                             <div>
-                                <label>Description of Problem/Work</label>
+                                <label></label>
                                 <Field name="description" component="textarea" placeholder="Description of Problem" />>
-    </div>
+                            </div>
+                            <div>
+                                <label></label>
+                                <Field name="description" component="textarea" placeholder="Work Done By Technician" />>
+                            </div>
                         </div>
                     )}
                 </Form>
