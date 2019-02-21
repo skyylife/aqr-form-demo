@@ -47,6 +47,12 @@ export default styled.div`
     color: #222;
   }
 
+  h3 {
+    text-align: center;
+    color: #222;
+    font-size: small;
+  }
+
   & > div {
     text-align: center;
   }
@@ -124,6 +130,15 @@ export default styled.div`
         border: 1px solid #ccc;
         border-radius: 3px;
       }
+
+      & > techarea {
+        flex: 1;
+        padding 3px 5px;
+        margin-right 15px;
+        border: 1px solid #ccc
+        border-radius: 3px
+      }
+
       & > input[type='checkbox'] {
         flex: 1;
         padding: 3px 5px;

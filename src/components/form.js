@@ -91,7 +91,7 @@ class App extends Component {
                 <Field
                   name="requesterPhoneNumber"
                   component="input"
-                  type="text"
+                  type="number"
                   placeholder="#"
                 />
               </div>
@@ -129,7 +129,7 @@ class App extends Component {
                 <Field
                   name="phoneNumber"
                   component="input"
-                  type="text"
+                  type="number"
                   placeholder="#"
                 />
               </div>
@@ -176,7 +176,7 @@ class App extends Component {
                 <Field
                   name="zipCode"
                   component="input"
-                  type="zip"
+                  type="number"
                   placeholder="11111"
                 />
               </div>
@@ -193,20 +193,21 @@ class App extends Component {
               <div>
                 <label />
                 <Field
-                  name="description"
+                  name="descriptionOfProblem"
                   component="textarea"
-                  placeholder="Description of Problem"
+                  placeholder="Description of Problem/Work"
                 />
               </div>
               <div>
                 <label />
                 <Field
-                  name="description"
+                  name="techWorkDone"
                   component="textarea"
                   placeholder="Work Done By Technician"
                 />
               </div>
               {/*Survey section */}
+
               <div>
                 <qLabel>Was all work complete?</qLabel>
                 <div>
@@ -322,6 +323,25 @@ class App extends Component {
                   </label>
                 </div>
               </div>
+                <h2>Technician Info</h2>
+                <div>
+                  <label>Technician:</label>
+                  <Field
+                    name="technameonsite"
+                    component="input"
+                    type='name'
+                    placeholder="Technician Name"
+                  />
+                </div>
+                <div>
+                  <label>Date Completed:</label>
+                  <Field
+                    name="datetechonsite"
+                    component='input'
+                    type='input'
+                    placeholder=''
+                  />
+                </div>
               <Signature
                 penColor="green"
                 canvasProps={{
@@ -330,7 +350,12 @@ class App extends Component {
                   className: "sigCanvas"
                 }}
               />
+              <div>
+              <h3>4526 Brass Way, Dallas, Tx 75236 </h3>
+              <h3>972.283.4444 // info@allquickrepairs.com</h3>
+              </div>
             </div>
+
           )}
         </Form>
       </Styles>
