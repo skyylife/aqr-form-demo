@@ -108,7 +108,7 @@ export default styled.div`
       }
       & > qLabel {
         color: #333;
-        width: 300px;
+        width: 200px;
         min-width: 60px;
         font-size: 1em;
         line-height: 32px;

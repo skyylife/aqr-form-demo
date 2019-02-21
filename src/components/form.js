@@ -4,12 +4,16 @@ import Styles from "./styles";
 import AutoSave from "./AutoSave";
 import Signature from "react-signature-canvas";
 
+// Timeout for saving/debounce
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+// Asynce saving values
 const save = async values => {
   console.log("Saving", values);
   await sleep(2000);
 };
+
+//Main Class
 class App extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +24,7 @@ class App extends Component {
     return (
       <Styles>
         <h1>All Quick Repairs </h1>
+        {/* Form declaration and any initial values delcared here */}
         <Form
           onSubmit={save}
           initialValies={{ state: "TX" }}
@@ -29,6 +34,7 @@ class App extends Component {
             <div className="form">
               <AutoSave debounce={1000} save={save} />
               <div>
+                {/*Date and Priority Level*/}
                 <label>Date:</label>
                 <Field
                   name="date"
@@ -39,27 +45,28 @@ class App extends Component {
               </div>
               <div>
                 <label>Priority Level</label>
+                <div>
+                  <label>
+                    <Field
+                      name="priorityLevel"
+                      component="input"
+                      type="radio"
+                      value="Normal"
+                    />{" "}
+                    Normal
+                  </label>
+                  <label>
+                    <Field
+                      name="priorityLevel"
+                      component="input"
+                      type="radio"
+                      value="Emergency"
+                    />{" "}
+                    Emergency
+                  </label>
+                </div>
               </div>
-              <div>
-                <label>
-                  <Field
-                    name="priorityLevel"
-                    component="input"
-                    type="checkbox"
-                    value="Normal"
-                  />{" "}
-                  Normal
-                </label>
-                <label>
-                  <Field
-                    name="priorityLevel"
-                    component="input"
-                    type="checkbox"
-                    value="Emergency"
-                  />{" "}
-                  Emergency
-                </label>
-              </div>
+              {/*Section for Requester */}
               <h2> Requester Info:</h2>
               <div>
                 <label> First Name</label>
@@ -97,6 +104,7 @@ class App extends Component {
                   placeholder="Email"
                 />
               </div>
+              {/*Section for Contact info */}
               <h2>Contact Info:</h2>
               <div>
                 <label> First Name</label>
@@ -134,6 +142,7 @@ class App extends Component {
                   placeholder="Email"
                 />
               </div>
+              {/*Section for Address */}
               <h2>Property Address:</h2>
               <div>
                 <label>Address Line:</label>
@@ -171,11 +180,11 @@ class App extends Component {
                   placeholder="11111"
                 />
               </div>
+              {/*Section for Problem description */}
               <h2>Type of Problem</h2>
               <div>
                 <label>Choose an item</label>
-                <Field name="problemType" component="select">
-                  <option />
+                <Field name="problemType" component="select" multiple>
                   <option value="Option 1">Option 1</option>
                   <option value="Option 2">Option 2</option>
                   <option value="Option 3">Option 3</option>
@@ -197,120 +206,121 @@ class App extends Component {
                   placeholder="Work Done By Technician"
                 />
               </div>
+              {/*Survey section */}
               <div>
                 <qLabel>Was all work complete?</qLabel>
-              </div>
-              <div>
-                <label>
-                  <Field
-                    name="workComplete"
-                    component="input"
-                    type="checkbox"
-                    value="Yes"
-                  />{" "}
-                  Yes
-                </label>
-                <label>
-                  <Field
-                    name="workComplete"
-                    component="input"
-                    type="checkbox"
-                    value="No"
-                  />{" "}
-                  No
-                </label>
+                <div>
+                  <label>
+                    <Field
+                      name="workComplete"
+                      component="input"
+                      type="radio"
+                      value="Yes"
+                    />{" "}
+                    Yes
+                  </label>
+                  <label>
+                    <Field
+                      name="workComplete"
+                      component="input"
+                      type="radio"
+                      value="No"
+                    />{" "}
+                    No
+                  </label>
+                </div>
               </div>
               <div>
                 <qLabel>Does work performed match your standards</qLabel>
-              </div>
-              <div>
-                <label>
-                  <Field
-                    name="standards"
-                    component="input"
-                    type="checkbox"
-                    value="Yes"
-                  />{" "}
-                  Yes
-                </label>
-                <label>
-                  <Field
-                    name="standards"
-                    component="input"
-                    type="checkbox"
-                    value="No"
-                  />{" "}
-                  No
-                </label>
+                <div>
+                  <label>
+                    <Field
+                      name="standards"
+                      component="input"
+                      type="radio"
+                      value="Yes"
+                    />{" "}
+                    Yes
+                  </label>
+                  <label>
+                    <Field
+                      name="standards"
+                      component="input"
+                      type="radio"
+                      value="No"
+                    />{" "}
+                    No
+                  </label>
+                </div>
               </div>
               <div>
                 <qLabel>Was technician prompt and responsive?</qLabel>
-              </div>
-              <div>
-                <label>
-                  <Field
-                    name="techPrompt"
-                    component="input"
-                    type="checkbox"
-                    value="Yes"
-                  />{" "}
-                  Yes
-                </label>
-                <label>
-                  <Field
-                    name="techPrompt"
-                    component="input"
-                    type="checkbox"
-                    value="No"
-                  />{" "}
-                  No
-                </label>
+                <div>
+                  <label>
+                    <Field
+                      name="techPrompt"
+                      component="input"
+                      type="radio"
+                      value="Yes"
+                    />{" "}
+                    Yes
+                  </label>
+                  <label>
+                    <Field
+                      name="techPrompt"
+                      component="input"
+                      type="radio"
+                      value="No"
+                    />{" "}
+                    No
+                  </label>
+                </div>
               </div>
               <div>
                 <qLabel>Did technician explain the problem and repair?</qLabel>
-              </div>
-              <div>
-                <label>
-                  <Field
-                    name="techExplain"
-                    component="input"
-                    type="checkbox"
-                    value="Yes"
-                  />{" "}
-                  Yes
-                </label>
-                <label>
-                  <Field
-                    name="techExplain"
-                    component="input"
-                    type="checkbox"
-                    value="No"
-                  />{" "}
-                  No
-                </label>
+                <div>
+                  <label>
+                    <Field
+                      name="techExplain"
+                      component="input"
+                      type="radio"
+                      value="Yes"
+                    />{" "}
+                    Yes
+                  </label>
+                  <label>
+                    <Field
+                      name="techExplain"
+                      component="input"
+                      type="radio"
+                      value="No"
+                    />{" "}
+                    No
+                  </label>
+                </div>
               </div>
               <div>
                 <qLabel>Would you use our service again?</qLabel>
-              </div>
-              <div>
-                <label>
-                  <Field
-                    name="serviceAgain"
-                    component="input"
-                    type="checkbox"
-                    value="Yes"
-                  />{" "}
-                  Yes
-                </label>
-                <label>
-                  <Field
-                    name="serviceAgain"
-                    component="input"
-                    type="checkbox"
-                    value="No"
-                  />{" "}
-                  No
-                </label>
+                <div>
+                  <label>
+                    <Field
+                      name="serviceAgain"
+                      component="input"
+                      type="radio"
+                      value="Yes"
+                    />{" "}
+                    Yes
+                  </label>
+                  <label>
+                    <Field
+                      name="serviceAgain"
+                      component="input"
+                      type="radio"
+                      value="No"
+                    />{" "}
+                    No
+                  </label>
+                </div>
               </div>
               <Signature
                 penColor="green"
